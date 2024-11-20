@@ -18,45 +18,59 @@
 
     <section id="definition">
         <h2>Qu'est-ce que la folie ?</h2>
-        <p>La folie est un concept complexe qui peut être compris de différentes manières selon les contextes :</p>
-        <ul>
-            <li><strong>Langage courant :</strong> Comportements ou idées perçus comme irrationnels, absurdes ou éloignés de la norme.</li>
-            <li><strong>Psychologie et psychiatrie :</strong> État où une personne perd le contact avec la réalité, souvent marqué par des hallucinations ou des idées délirantes.</li>
-            <li><strong>Philosophie et littérature :</strong> Une condition humaine qui remet en question les normes de la raison.</li>
-            <li><strong>Art et créativité :</strong> Une source d'inspiration associée à une vision unique.</li>
-        </ul>
+        <p class="mouvement">Est-ce une frontière entre le réel et l'imaginaire ? Ou une simple perspective différente ?</p>
+        
+        <div class="image-definition">
+            <img src="images/courant.jpg" alt="Folie dans le langage courant" class="open-img" data-src="images/courant.jpg">
+            <p class="definition">La folie dans le langage courant désigne un comportement perçu comme irrationnel, absurde ou éloigné de la norme. C'est souvent utilisé pour décrire des actes extrêmes ou des choix de vie incompréhensibles.</p>
+        </div>
     </section>
 
     <section id="galerie">
         <h2>Exploration Visuelle</h2>
         <div class="spirale"></div>
         <p>Plongez dans une spirale infinie.</p>
-
-        <div class="gallery-item">
-            <p><strong>Langage courant :</strong> Désigne des comportements ou idées jugés irrationnels ou absurdes. 
-                <em>"Il a eu la folie de tout quitter pour voyager sans destination."</em>
-            </p>
+        
+        <div class="image-definition">
+            <img src="images/art.jpg" alt="Folie et l'art" class="open-img" data-src="images/art.jpg">
+            <p class="definition">Dans l'art, la folie est parfois perçue comme une source d'inspiration, où l'expression des émotions humaines brutes donne naissance à des œuvres uniques et puissantes.</p>
         </div>
-        <div class="gallery-item">
-            <p><strong>Psychologie et psychiatrie :</strong> État où une personne perd le contact avec la réalité, remplacé aujourd'hui par des termes cliniques comme psychose ou schizophrénie.</p>
+        
+        <div class="image-definition">
+            <img src="images/philosophie.jpg" alt="Folie en philosophie" class="open-img" data-src="images/philosophie.jpg">
+            <p class="definition">En philosophie, la folie interroge les frontières de la raison et de l'irrationnel. Certains philosophes ont exploré la folie comme un miroir de la condition humaine, remettant en question les normes établies de la pensée rationnelle.</p>
         </div>
-        <div class="gallery-item">
-            <p><strong>Philosophie et littérature :</strong> La folie est vue comme une remise en question des normes de la raison. Elle interroge les limites de la société et de la réalité.</p>
+        
+        <div class="image-definition">
+            <img src="images/philo2.jpg" alt="Concept philosophique de la folie" class="open-img" data-src="images/philo2.jpg">
+            <p class="definition">La folie en philosophie peut également être vue comme une transgression des limites de l'esprit humain, un moyen de remettre en cause la société et ses conventions. Elle offre une perspective alternative sur le monde.</p>
         </div>
-        <div class="gallery-item">
-            <p><strong>Art et créativité :</strong> Une excentricité valorisée, une source d'inspiration unique. 
-                "Les grands artistes flirtent souvent avec la folie pour créer des œuvres uniques."
-            </p>
+        
+        <div class="image-definition">
+            <img src="images/psycho.jpg" alt="Folie en psychiatrie" class="open-img" data-src="images/psycho.jpg">
+            <p class="definition">En psychiatrie, la folie fait référence à des troubles mentaux graves, où la perception de la réalité est altérée. Des conditions comme la schizophrénie ou la psychose en sont des exemples où les individus perdent le contact avec la réalité.</p>
         </div>
     </section>
 
     <section id="reflexion">
-        <h2>Réflexion</h2>
-        <p>Et si la folie n'était qu'une manière différente de percevoir le monde ?</p>
+        <h2>Et si...</h2>
+        <p>La folie n'était qu'une nouvelle manière de voir le monde ?</p>
     </section>
 
     <footer>
         <p>&copy; 2024 - Créé pour le plaisir de l'esprit.</p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span id="close-btn" class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Image en plein écran">
+        <div id="swipe-container">
+            <button id="prev-btn" class="swipe-btn">&lt;</button>
+            <button id="next-btn" class="swipe-btn">&gt;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
