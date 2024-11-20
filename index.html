@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Folie</title>
+    <title>La Folie : Entre Chaos et Génie</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>La Folie : Entre Chaos et Génie</h1>
@@ -19,36 +21,53 @@
     <section id="definition">
         <h2>Qu'est-ce que la folie ?</h2>
         <p class="mouvement">Est-ce une frontière entre le réel et l'imaginaire ? Ou une simple perspective différente ?</p>
-        
-        <div class="image-definition">
-            <img src="images/courant.jpg" alt="Folie dans le langage courant" class="open-img" data-src="images/courant.jpg">
-            <p class="definition">La folie dans le langage courant désigne un comportement perçu comme irrationnel, absurde ou éloigné de la norme. C'est souvent utilisé pour décrire des actes extrêmes ou des choix de vie incompréhensibles.</p>
+
+        <div class="long-definition">
+            <h3>Dans le langage courant :</h3>
+            <p>La folie désigne un comportement ou des idées perçus comme irrationnels, absurdes ou exagérément éloignés de la norme. On peut parler de folie pour qualifier des actes ou des pensées jugés déraisonnables. Exemple : "Il a eu la folie de tout quitter pour voyager sans destination."</p>
+        </div>
+
+        <div class="long-definition">
+            <h3>En psychologie et psychiatrie :</h3>
+            <p>Le terme "folie" est généralement évité au profit de termes cliniques plus précis (comme psychose, schizophrénie ou trouble bipolaire). Historiquement, il désignait un état où une personne perdait le contact avec la réalité, souvent marqué par des hallucinations, des idées délirantes ou des comportements désorganisés.</p>
+        </div>
+
+        <div class="long-definition">
+            <h3>En philosophie et littérature :</h3>
+            <p>La folie peut être explorée comme une condition humaine ou un état qui remet en question les normes de la raison et les limites de la société. Par exemple, dans les œuvres de Michel Foucault (Histoire de la folie), elle est vue comme un concept socialement construit.</p>
+        </div>
+
+        <div class="long-definition">
+            <h3>Dans l'art ou la créativité :</h3>
+            <p>La folie est parfois valorisée comme une forme d'excentricité ou une source d'inspiration, associée à une liberté d'esprit ou une vision hors du commun. Exemple : "Les grands artistes ont souvent flirté avec la folie pour créer des œuvres uniques."</p>
         </div>
     </section>
 
     <section id="galerie">
         <h2>Exploration Visuelle</h2>
-        <div class="spirale"></div>
-        <p>Plongez dans une spirale infinie.</p>
-        
-        <div class="image-definition">
-            <img src="images/art.jpg" alt="Folie et l'art" class="open-img" data-src="images/art.jpg">
-            <p class="definition">Dans l'art, la folie est parfois perçue comme une source d'inspiration, où l'expression des émotions humaines brutes donne naissance à des œuvres uniques et puissantes.</p>
-        </div>
-        
-        <div class="image-definition">
-            <img src="images/philosophie.jpg" alt="Folie en philosophie" class="open-img" data-src="images/philosophie.jpg">
-            <p class="definition">En philosophie, la folie interroge les frontières de la raison et de l'irrationnel. Certains philosophes ont exploré la folie comme un miroir de la condition humaine, remettant en question les normes établies de la pensée rationnelle.</p>
-        </div>
-        
-        <div class="image-definition">
-            <img src="images/philo2.jpg" alt="Concept philosophique de la folie" class="open-img" data-src="images/philo2.jpg">
-            <p class="definition">La folie en philosophie peut également être vue comme une transgression des limites de l'esprit humain, un moyen de remettre en cause la société et ses conventions. Elle offre une perspective alternative sur le monde.</p>
-        </div>
-        
-        <div class="image-definition">
-            <img src="images/psycho.jpg" alt="Folie en psychiatrie" class="open-img" data-src="images/psycho.jpg">
-            <p class="definition">En psychiatrie, la folie fait référence à des troubles mentaux graves, où la perception de la réalité est altérée. Des conditions comme la schizophrénie ou la psychose en sont des exemples où les individus perdent le contact avec la réalité.</p>
+
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="images/art.jpg" alt="Art" class="gallery-image">
+                <p>La folie dans l'art.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/courant.jpg" alt="Courant" class="gallery-image">
+                <p>Le courant de la folie.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/philosophie.jpg" alt="Philosophie" class="gallery-image">
+                <p>Philosophie de la folie.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/philo2.jpg" alt="Philosophie 2" class="gallery-image">
+                <p>Philosophie de la folie, version 2.</p>
+            </div>
+            <!-- Remplacer l'image de psycho par un effet visuel -->
+            <div class="gallery-item psycho-effect">
+                <p>La folie en psychologie.</p>
+                <div class="psycho-visual"></div>
+            </div>
         </div>
     </section>
 
@@ -61,16 +80,42 @@
         <p>&copy; 2024 - Créé pour le plaisir de l'esprit.</p>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span id="close-btn" class="close-btn">&times;</span>
-        <img id="lightbox-img" src="" alt="Image en plein écran">
-        <div id="swipe-container">
-            <button id="prev-btn" class="swipe-btn">&lt;</button>
-            <button id="next-btn" class="swipe-btn">&gt;</button>
-        </div>
+    <!-- Modale pour afficher les images -->
+    <div class="modal" id="imageModal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Afficher l'image en plein écran
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const caption = document.getElementById("caption");
+        const closeModal = document.getElementById("closeModal");
+
+        // Ajouter un événement click sur chaque image de la galerie
+        const galleryImages = document.querySelectorAll(".gallery-image");
+        galleryImages.forEach(image => {
+            image.addEventListener("click", function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                caption.innerHTML = this.alt;
+            });
+        });
+
+        // Fermer la modale quand on clique sur la croix
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Fermer la modale si l'utilisateur clique en dehors de l'image
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
+
 </html>

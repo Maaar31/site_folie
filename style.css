@@ -42,93 +42,26 @@ nav a:hover {
     100% { background-position: 0% 50%; }
 }
 
-/* Section Galerie */
+/* Sections */
 section {
     padding: 50px;
     text-align: center;
 }
 
-.open-img {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.open-img:hover {
-    transform: scale(1.05);
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.lightbox img {
-    max-width: 80%;
-    max-height: 80%;
-    margin: 10px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #fff;
-    font-size: 2em;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.swipe-btn {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 2em;
-    border: none;
-    padding: 10px;
+#mouvement {
+    transition: all 0.3s ease;
+    display: inline-block;
     cursor: pointer;
 }
 
-#swipe-container {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+/* Texte mouvant */
+.mouvement:hover {
+    transform: rotate(-5deg) scale(1.1);
+    color: #ff6f3c;
+    text-shadow: 2px 2px #000;
 }
 
-#prev-btn {
-    left: 10px;
-}
-
-#next-btn {
-    right: 10px;
-}
-
-/* Style pour les sections avec les images et les définitions */
-.image-definition {
-    margin-bottom: 40px;
-}
-
-.definition {
-    font-size: 1.1em;
-    color: #fff;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Spirale */
+/* Spirale (visuel perturbant) */
 .spirale {
     width: 200px;
     height: 200px;
@@ -149,4 +82,100 @@ footer {
     text-align: center;
     padding: 10px;
     background: rgba(0, 0, 0, 0.7);
+}
+
+/* Style de la galerie */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.gallery-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+/* Effet visuel pour la psychologie */
+.psycho-effect {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.psycho-visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+    transform: translate(-50%, -50%);
+    filter: blur(10px);
+    opacity: 0.6;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.psycho-effect:hover .psycho-visual {
+    transform: scale(1.2);
+    filter: blur(20px);
+    opacity: 1;
+}
+
+/* Modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
