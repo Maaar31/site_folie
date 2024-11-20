@@ -1,181 +1,137 @@
-/* Styles de base */
+/* Global Styles */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    background: linear-gradient(-45deg, #6a0572, #a90329, #ff6f3c, #3c91e6);
-    background-size: 400% 400%;
-    animation: backgroundAnimation 15s ease infinite;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
 }
 
 header {
-    text-align: center;
+    background-color: #333;
+    color: white;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
 header h1 {
-    font-size: 2.5em;
-    text-transform: uppercase;
     margin: 0;
 }
 
-nav {
-    margin-top: 10px;
-}
-
 nav a {
+    color: white;
     margin: 0 10px;
-    color: #ffcbcb;
     text-decoration: none;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #ff6f3c;
+    text-decoration: underline;
 }
 
-/* Animation arrière-plan */
-@keyframes backgroundAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Article Section Styles */
+.article-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Sections */
-section {
-    padding: 50px;
-    text-align: center;
-}
-
-#mouvement {
-    transition: all 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* Texte mouvant */
-.mouvement:hover {
-    transform: rotate(-5deg) scale(1.1);
-    color: #ff6f3c;
-    text-shadow: 2px 2px #000;
-}
-
-/* Spirale (visuel perturbant) */
-.spirale {
-    width: 200px;
-    height: 200px;
-    border: 5px solid #fff;
-    border-radius: 50%;
-    background: conic-gradient(#ff6f3c, #6a0572, #ffcbcb, #3c91e6, #ff6f3c);
-    animation: rotation 5s linear infinite;
-    margin: 20px auto;
-}
-
-@keyframes rotation {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Pied de page */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* Style de la galerie */
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.gallery-item {
-    margin: 20px;
-    text-align: center;
-}
-
-.gallery-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+.article-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.gallery-image:hover {
-    transform: scale(1.1);
+.article-section:hover {
+    transform: translateY(-10px); /* Animation lors du survol */
 }
 
-/* Effet visuel pour la psychologie */
-.psycho-effect {
+.article-section h2 {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-bottom: 10px;
     position: relative;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
-.psycho-visual {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 120%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
-    transform: translate(-50%, -50%);
-    filter: blur(10px);
-    opacity: 0.6;
-    transition: transform 0.3s ease, filter 0.3s ease;
+.article-section p {
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInText 1.5s 0.5s forwards; /* Décalage d'animation pour le texte */
 }
 
-.psycho-effect:hover .psycho-visual {
-    transform: scale(1.2);
-    filter: blur(20px);
-    opacity: 1;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
-/* Modale */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Spirale animée */
+.spirale {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    position: relative;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Images */
+.image-article {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    max-width: 600px;
+    margin: 20px 0;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeInImage 2s 1s forwards;
 }
 
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
 }
 
-#caption {
+/* Footer */
+.article-footer {
     text-align: center;
-    color: #ccc;
-    font-size: 1.2em;
-    padding: 10px;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #555;
 }
 
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+/* Transition des liens dans le nav */
+nav a {
+    transition: color 0.3s ease;
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+nav a:hover {
+    color: #ff6f61; /* Changement de couleur au survol */
+}
+
+/* Sections avec des effets au survol */
+.article-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
